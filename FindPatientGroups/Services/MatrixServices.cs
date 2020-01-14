@@ -88,7 +88,7 @@ namespace FindPatientGroups.Services
                 for(int l=0; l < directions.Length; l++)
                 {
                     //change column for each row to cover all neighbour elements
-                    colDirection = directions[k];
+                    colDirection = directions[l];
 
                     //now the neighbour must be checked if sick or not
                     if (checkNeighbour(arr, i + rowDirection, j + colDirection))
