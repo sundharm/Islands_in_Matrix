@@ -25,12 +25,12 @@ namespace FindPatientGroups.Controllers
         [HttpPost]
         [Route("patient-groups/calculate")]
         //just display the matrix received from request for now
-        public ActionResult<int[,]> FindNumberOfPatientGroups(MatrixClass matrix)
+        public ActionResult<int> FindNumberOfPatientGroups(MatrixClass matrix)
         {
             //call displayMatrix function to receive matrix
-            var responseMatrix = _services.displayMatrix(matrix);
+            var numberOfGroups = _services.numberOfGroups(matrix);
             //send matrix as response
-            return responseMatrix;
+            return numberOfGroups;
         }
     }
 }

@@ -29,6 +29,7 @@ namespace FindPatientGroups.Services
     public class MatrixServices : IMatrixServices
     {
         private int[,] patientmatrix;
+        private static int[] directions = { -1, 0, 1 };
 
         //just displaying the matrix from request
         public int[,] displayMatrix(MatrixClass matrix)
@@ -47,7 +48,7 @@ namespace FindPatientGroups.Services
 
             for(int i = 0; i < patientmatrix.GetLength(0); i++)
             {
-                for(int j=0; j < patientmatrix.GetLength(1); j++)
+                for(int j = 0; j < patientmatrix.GetLength(1); j++)
                 {
                     if(patientmatrix[i,j]==1 && cellsVisited[i, j] != true)
                     {
@@ -56,13 +57,65 @@ namespace FindPatientGroups.Services
                         //Call function to perform Depth First Search on the element
                         //Pass the matrix, row index, column index and cellsVisited matrix to traverse all the neighbours
 
-                        //DepthFirstSearch(patientmatrix, i, j, cellsVisited);
+                        DepthFirstSearch(patientmatrix, i, j, cellsVisited);
                     }
                 }
             }
 
             return numberOfGroups;
         }
-           
+
+        static void DepthFirstSearch(int[,] arr , int i, int j, bool[,] arrVisited)
+        {
+            //check if element is already visited
+            if (arrVisited[i, j])
+            {
+                return;
+            }
+
+            //mark the element visited as true
+            arrVisited[i, j] = true;
+
+            //all the sorrounding elements must be checked
+
+            //the direction to check the neighbours
+            int rowDirection, colDirection;
+
+            for(int k=0; k< directions.Length; k++)
+            {
+                //fix the row
+                rowDirection = directions[k];
+                for(int l=0; l < directions.Length; l++)
+                {
+                    //change column for each row to cover all neighbour elements
+                    colDirection = directions[k];
+
+                    //now the neighbour must be checked if sick or not
+                    if (checkNeighbour(arr, i + rowDirection, j + colDirection))
+                    {
+                        DepthFirstSearch(arr, i + rowDirection, j + colDirection, arrVisited);
+                    }
+
+                }
+            }
+
+
+        }
+
+        static bool checkNeighbour(int [,] arr, int m, int n)
+        {
+            //check if the row index and col index are within the limits
+            if((m>=0) && (m < arr.GetLength(0)) && (n>=0) && (n < arr.GetLength(1)))
+            {
+                //check if neighbour is sick
+                if (arr[m, n] == 1)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
     }
 }
