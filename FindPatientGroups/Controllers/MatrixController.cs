@@ -32,7 +32,7 @@ namespace FindPatientGroups.Controllers
             
             if (numberOfGroups < 0)
             {
-                return NotFound();
+                return NotFound("Invalid patients group");
             }
 
             Dictionary<string, int> response = new Dictionary<string, int>();

@@ -31,13 +31,6 @@ namespace FindPatientGroups.Services
         private int[,] patientmatrix;
         private static int[] directions = { -1, 0, 1 };
 
-        //just displaying the matrix from request
-        public int[,] displayMatrix(MatrixClass matrix)
-        {
-            patientmatrix = matrix.matrix;
-            return patientmatrix;
-        }
-
         //function to find number of groups
         public int numberOfGroups(MatrixClass matrix)
         {
