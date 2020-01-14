@@ -1,4 +1,32 @@
 ﻿<Properties StartupConfiguration="{CC4BDD39-F5CB-4675-A525-8949EE6E9AD7}|Default">
-  <MonoDevelop.Ide.ItemProperties.FindPatientGroups FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FindPatientGroups/Startup.cs">
+    <Files>
+      <File FileName="FindPatientGroups/Controllers/MatrixController.cs" Line="22" Column="26" />
+      <File FileName="FindPatientGroups/Models/MatrixClass.cs" Line="1" Column="1" />
+      <File FileName="FindPatientGroups/Services/MatrixServices.cs" Line="1" Column="1" />
+      <File FileName="FindPatientGroups/Services/IMatrixServices.cs" Line="1" Column="1" />
+      <File FileName="FindPatientGroups/Startup.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FindPatientGroups" expanded="True">
+            <Node name="FindPatientGroups" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.FindPatientGroups FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
