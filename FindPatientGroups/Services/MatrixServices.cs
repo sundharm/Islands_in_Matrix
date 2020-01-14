@@ -59,6 +59,10 @@ namespace FindPatientGroups.Services
 
                         DepthFirstSearch(patientmatrix, i, j, cellsVisited);
                     }
+                    else if(!(patientmatrix[i,j]==1 || patientmatrix[i, j] == 0))
+                    {
+                        return -1;
+                    } 
                 }
             }
 

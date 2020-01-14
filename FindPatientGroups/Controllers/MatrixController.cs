@@ -27,9 +27,15 @@ namespace FindPatientGroups.Controllers
         //just display the matrix received from request for now
         public ActionResult<int> FindNumberOfPatientGroups(MatrixClass matrix)
         {
-            //call displayMatrix function to receive matrix
+            
             var numberOfGroups = _services.numberOfGroups(matrix);
-            //send matrix as response
+            
+            if (numberOfGroups < 0)
+            {
+                return NotFound();
+            }
+
+ 
             return numberOfGroups;
         }
     }
