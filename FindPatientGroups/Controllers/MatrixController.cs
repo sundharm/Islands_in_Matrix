@@ -35,8 +35,10 @@ namespace FindPatientGroups.Controllers
                 return NotFound();
             }
 
- 
-            return numberOfGroups;
+            Dictionary<string, int> response = new Dictionary<string, int>();
+            response.Add("numberOfGroups", numberOfGroups);
+
+            return Json(response);
         }
     }
 }
