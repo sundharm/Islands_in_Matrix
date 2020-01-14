@@ -24,12 +24,12 @@ namespace FindPatientGroups.Controllers
 
         [HttpPost]
         [Route("patient-groups/calculate")]
-        //just display the matrix received from request for now
         public ActionResult<int> FindNumberOfPatientGroups(MatrixClass matrix)
         {
-            
+            //Call function to find number of groups
             var numberOfGroups = _services.numberOfGroups(matrix);
-            
+
+            //if -1 is returned, it is an invalid group
             if (numberOfGroups < 0)
             {
                 return NotFound("Invalid patients group");

@@ -43,6 +43,7 @@ namespace FindPatientGroups.Services
             {
                 for(int j = 0; j < patientmatrix.GetLength(1); j++)
                 {
+                    //check if patient is 1 and the has not been visited earlier
                     if(patientmatrix[i,j]==1 && cellsVisited[i, j] != true)
                     {
                         numberOfGroups++;
