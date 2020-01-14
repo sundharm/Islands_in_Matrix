@@ -90,6 +90,12 @@ namespace FindPatientGroups.Services
                     //change column for each row to cover all neighbour elements
                     colDirection = directions[l];
 
+                    //skip if the element is current element
+                    if (rowDirection == 0 && colDirection == 0)
+                    {
+                        continue;
+                    }
+
                     //now the neighbour must be checked if sick or not
                     if (checkNeighbour(arr, i + rowDirection, j + colDirection))
                     {
